@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ทางรอดคนเมือง ในยุคของแพงและสงคราม</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Noto+Serif+Thai:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5EDD6;
+    --warm-white: #FBF7EE;
+    --deep-green: #1A3A2A;
+    --forest: #2D5A3D;
+    --sage: #7A9E7E;
+    --gold: #C8962A;
+    --amber: #E8B44A;
+    --rust: #C04C2A;
+    --charcoal: #2A2A2A;
+    --light-sage: #D4E6D0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--deep-green);
+    font-family: 'Sarabun', sans-serif;
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* ===== COVER PAGE ===== */
+  #cover {
+    min-height: 100vh;
+    background: var(--deep-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+  }
+
+  .cover-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(200,150,42,0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 20% 20%, rgba(45,90,61,0.6) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 10%, rgba(26,58,42,0.8) 0%, transparent 50%);
+  }
+
+  .rice-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(200,150,42,0.03) 40px,
+        rgba(200,150,42,0.03) 41px
+      );
+  }
+
+  .cover-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 700px;
+  }
+
+  .ebook-badge {
+    display: inline-block;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    font-family: 'Sarabun', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    padding: 0.4rem 1.2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    animation: fadeInDown 1s ease both;
+  }
+
+  .cover-icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s 0.2s ease both;
+    display: block;
+  }
+
+  .cover-title {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 1s 0.3s ease both;
+  }
+
+  .cover-subtitle {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--amber);
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 1s 0.4s ease both;
+  }
+
+  .cover-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    margin: 0 auto 2rem;
+    animation: fadeIn 1s 0.5s ease both;
+  }
+
+  .cover-meta {
+    font-size: 0.95rem;
+    color: rgba(245,237,214,0.6);
+    margin-bottom: 3rem;
+    animation: fadeIn 1s 0.6s ease both;
+    line-height: 1.8;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(245,237,214,0.4);
+    font-size: 0.8rem;
+    animation: fadeIn 2s 1s ease both;
+  }
+
+  .scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid var(--amber);
+    border-bottom: 2px solid var(--amber);
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.8rem 2rem;
+    background: rgba(26,58,42,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(200,150,42,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  nav.visible { transform: translateY(0); }
+
+  .nav-title {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--amber);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(245,237,214,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--amber); }
+
+  /* ===== SECTION BASE ===== */
+  .section {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .section-title {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-body {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: rgba(245,237,214,0.85);
+  }
+
+  /* ===== CHAPTER DIVIDER ===== */
+  .chapter-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,150,42,0.3), transparent);
+    margin: 0 2rem;
+  }
+
+  /* ===== INTRO / BACKGROUND ===== */
+  #intro { background: var(--deep-green); }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .impact-card {
+    background: rgba(45,90,61,0.3);
+    border: 1px solid rgba(200,150,42,0.2);
+    border-radius: 4px;
+    padding: 1.5rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .impact-card:hover {
+    border-color: var(--amber);
+    transform: translateY(-4px);
+  }
+
+  .impact-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+  .impact-num {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .impact-label { font-size: 0.9rem; color: rgba(245,237,214,0.7); }
+
+  /* ===== PRINCIPLES ===== */
+  #principles {
+    background: linear-gradient(180deg, var(--deep-green), #142D20);
+  }
+
+  .principle-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .principle-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding: 1.5rem;
+    background: rgba(45,90,61,0.2);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 4px 4px 0;
+    transition: background 0.3s;
+  }
+
+  .principle-item:hover { background: rgba(45,90,61,0.4); }
+
+  .principle-num {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgba(200,150,42,0.25);
+    line-height: 1;
+    text-align: center;
+    padding-top: 0.2rem;
+  }
+
+  .principle-title {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--amber);
+    margin-bottom: 0.5rem;
+  }
+
+  .principle-body {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(245,237,214,0.8);
+  }
+
+  /* ===== STEPS ===== */
+  #steps { background: #142D20; }
+
+  .steps-container { margin-top: 3rem; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 2rem;
+    position: relative;
+    padding-bottom: 2.5rem;
+  }
+
+  .step:not(:last-child) .step-line {
+    position: absolute;
+    left: 24px;
+    top: 50px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(200,150,42,0.5), rgba(200,150,42,0.1));
+  }
+
+  .step-dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--forest);
+    border: 2px solid var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--amber);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-content { padding-top: 0.6rem; }
+
+  .step-title {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 0.7rem;
+  }
+
+  .step-body {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: rgba(245,237,214,0.75);
+    margin-bottom: 1rem;
+  }
+
+  .tip-box {
+    background: rgba(200,150,42,0.1);
+    border: 1px solid rgba(200,150,42,0.25);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+    color: rgba(245,237,214,0.8);
+    line-height: 1.7;
+  }
+
+  .tip-box strong { color: var(--amber); }
+
+  /* ===== COMPARISON TABLE ===== */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .compare-table th {
+    background: rgba(200,150,42,0.2);
+    color: var(--amber);
+    padding: 0.8rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(200,150,42,0.3);
+  }
+
+  .compare-table td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(245,237,214,0.07);
+    color: rgba(245,237,214,0.8);
+  }
+
+  .compare-table tr:hover td { background: rgba(45,90,61,0.2); }
+
+  .save-highlight {
+    background: rgba(45,90,61,0.4);
+    border: 1px solid var(--sage);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+    color: var(--light-sage);
+    margin-top: 0.5rem;
+  }
+
+  /* ===== BENEFITS ===== */
+  #benefits { background: var(--deep-green); }
+
+  .benefit-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(200,150,42,0.3);
+    background: transparent;
+    color: rgba(245,237,214,0.6);
+    border-radius: 2rem;
+    cursor: pointer;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--amber);
+    color: var(--deep-green);
+    border-color: var(--amber);
+    font-weight: 700;
+  }
+
+  .benefit-panel { display: none; }
+  .benefit-panel.active { display: block; }
+
+  .benefit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 1rem;
+    color: rgba(245,237,214,0.85);
+    line-height: 1.7;
+  }
+
+  .benefit-list li::before {
+    content: '✦';
+    color: var(--amber);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* ===== SUMMARY QUOTE ===== */
+  #summary {
+    background: linear-gradient(135deg, #142D20, var(--deep-green));
+    text-align: center;
+  }
+
+  .big-quote {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--cream);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    position: relative;
+  }
+
+  .big-quote::before, .big-quote::after {
+    font-size: 4rem;
+    color: rgba(200,150,42,0.2);
+    font-family: Georgia, serif;
+    line-height: 0;
+    position: relative;
+    top: 1rem;
+  }
+
+  .big-quote::before { content: '"'; margin-right: 0.2rem; }
+  .big-quote::after { content: '"'; margin-left: 0.2rem; }
+
+  .quote-attr {
+    font-size: 0.9rem;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #0F2218;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(200,150,42,0.15);
+  }
+
+  .footer-title {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--amber);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-sub {
+    font-size: 0.85rem;
+    color: rgba(245,237,214,0.4);
+    line-height: 1.8;
+  }
+
+  .sources {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .sources a {
+    color: rgba(200,150,42,0.6);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .sources a:hover { color: var(--amber); }
+
+  /* ===== READING PROGRESS ===== */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--amber);
+    z-index: 200;
+    width: 0%;
+    transition: width 0.1s;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(6px); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .impact-grid { grid-template-columns: 1fr 1fr; }
+    .principle-item { grid-template-columns: 40px 1fr; gap: 1rem; }
+    .step { grid-template-columns: 40px 1fr; gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav id="navbar">
+  <div class="nav-title">ทางรอดคนเมือง</div>
+  <ul class="nav-links">
+    <li><a href="#intro">ที่มา</a></li>
+    <li><a href="#principles">หลักปรัชญา</a></li>
+    <li><a href="#steps">วิธีการ</a></li>
+    <li><a href="#benefits">ประโยชน์</a></li>
+  </ul>
+</nav>
+
+<!-- COVER -->
+<section id="cover">
+  <div class="cover-bg"></div>
+  <div class="rice-pattern"></div>
+  <div class="cover-content">
+    <div class="ebook-badge">E-Book • ปรัชญาเศรษฐกิจพอเพียง • Gen 211</div>
+    <span class="cover-icon">🌾</span>
+    <h1 class="cover-title">ทางรอดคนเมือง</h1>
+    <p class="cover-subtitle">ในยุคของแพงและสงคราม</p>
+    <div class="cover-divider"></div>
+    <p class="cover-meta">
+      การประยุกต์ใช้หลักปรัชญาเศรษฐกิจพอเพียง<br>
+      รับมือวิกฤติพลังงานและค่าครองชีพสูง<br>
+      สำหรับประชาชนในกรุงเทพมหานคร<br><br>
+      <strong style="color: rgba(245,237,214,0.8)">นายธีรวิทย์ พงษ์คุณาวุฒิ</strong> — รหัส 65070502423
+    </p>
+  </div>
+  <div class="scroll-hint">
+    <span>เลื่อนลงเพื่ออ่าน</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="section">
+    <span class="section-label reveal">บทที่ 1 — ที่มาและความสำคัญ</span>
+    <h2 class="section-title reveal">วิกฤติที่ไม่ไกลตัวเลย</h2>
+    <p class="section-body reveal">
+      ในปี 2566–2567 สถานการณ์ความตึงเครียดในตะวันออกกลางและความขัดแย้งระหว่างประเทศ ส่งผลกระทบโดยตรงต่อราคาพลังงานในตลาดโลก ราคาน้ำมันพุ่งสูงกว่า <strong style="color: var(--amber)">50%</strong> ทำให้ต้นทุนการขนส่งและราคาสินค้าทั่วไทยเพิ่มสูงขึ้นตาม กรุงเทพมหานครซึ่งพึ่งพาการขนส่งและตลาดเป็นหลัก ได้รับผลกระทบอย่างเต็มๆ
+    </p>
+
+    <div class="chart-box reveal" style="margin: 2rem 0; background: rgba(255,255,255,0.04); border: 1px solid rgba(200,150,42,0.2); border-radius: 4px; padding: 1.2rem;">
+      <p style="font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.8rem; font-weight: 600;">รูปที่ 1 — ราคาน้ำมันแก๊สโซฮอล์ 95 ช่วง 6 เดือนที่ผ่านมา</p>
+      <img src="95.png" alt="กราฟราคาน้ำมันแก๊สโซฮอล์ 95" style="width:100%; border-radius:2px; display:block;">
+      <p style="font-size: 0.8rem; color: rgba(245,237,214,0.45); margin-top: 0.6rem; text-align: right;">ที่มา: motorist.co.th/petrol-prices</p>
+    </div>
+
+    <div class="impact-grid reveal" style="transition-delay: 0.2s">
+      <div class="impact-card">
+        <div class="impact-icon">⛽</div>
+        <div class="impact-num">+50%</div>
+        <div class="impact-label">ราคาน้ำมันที่เพิ่มขึ้น</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🏙️</div>
+        <div class="impact-num">10M+</div>
+        <div class="impact-label">ประชาชนที่ได้รับผลกระทบ</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">💸</div>
+        <div class="impact-num">66%</div>
+        <div class="impact-label">หนี้สาธารณะต่อ GDP</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🏛️</div>
+        <div class="impact-num">20,000 ล้าน</div>
+        <div class="impact-label">งบฯ โครงการไทยช่วยไทยพลัส</div>
+      </div>
+    </div>
+
+    <p class="section-body reveal" style="margin-top: 2rem; transition-delay: 0.3s">
+      แม้รัฐบาลจะออกโครงการ <strong style="color: var(--amber)">"ไทยช่วยไทยพลัส"</strong> ช่วยเหลือประชาชนกว่า 10 ล้านคน แต่ด้วยภาระหนี้สาธารณะที่สูง การพึ่งพามาตรการภาครัฐเพียงอย่างเดียวจึงไม่ยั่งยืน <br><br>
+      <strong>คำตอบที่แท้จริงอยู่ที่ปัจเจก — และหลักปรัชญาเศรษฐกิจพอเพียง</strong>
+    </p>
+  </div>
+</section>
+
+<div class="chapter-divider"></div>
+
+<!-- PRINCIPLES -->
+<section id="principles">
+  <div class="section">
+    <span class="section-label reveal">บทที่ 2 — หลักปรัชญา</span>
+    <h2 class="section-title reveal">เศรษฐกิจพอเพียง<br>คืออาวุธในยามวิกฤติ</h2>
+    <p class="section-body reveal">หลักปรัชญาเศรษฐกิจพอเพียงของในหลวงรัชกาลที่ 9 ประกอบด้วย 3 หลักการและ 2 เงื่อนไข ที่นำมาปรับใช้กับชีวิตคนเมืองได้อย่างลงตัว</p>
+
+    <div class="principle-list">
+      <div class="principle-item reveal">
+        <div class="principle-num">1</div>
+        <div>
+          <div class="principle-title">ความพอประมาณ</div>
+          <div class="principle-body">ใช้จ่ายให้เหมาะกับรายได้ของตัวเอง เลือกซื้อเฉพาะสิ่งที่จำเป็น ลดสิ่งที่ไม่จำเป็นลง ไม่ให้รายจ่ายเกินตัวในช่วงที่ค่าครองชีพพุ่งสูง</div>
+        </div>
+      </div>
+      <div class="principle-item reveal">
+        <div class="principle-num">2</div>
+        <div>
+          <div class="principle-title">ความมีเหตุผล</div>
+          <div class="principle-body">ก่อนใช้เงินหรือตัดสินใจใดๆ ควรคิดและวางแผน เปรียบเทียบราคาก่อนซื้อ วางแผนเมนูล่วงหน้า ไม่ซื้อเพราะความอยากหรือกระแส</div>
+        </div>
+      </div>
+      <div class="principle-item reveal">
+        <div class="principle-num">3</div>
+        <div>
+          <div class="principle-title">การมีภูมิคุ้มกัน</div>
+          <div class="principle-body">เตรียมตัวไว้ก่อนเผื่อเกิดเหตุไม่คาดคิด — มีเงินออมฉุกเฉิน ทำอาหารกินเองได้ มีเครือข่ายคนช่วยเหลือกัน</div>
+        </div>
+      </div>
+      <div class="principle-item reveal">
+        <div class="principle-num">4</div>
+        <div>
+          <div class="principle-title">เงื่อนไขความรู้</div>
+          <div class="principle-body">รู้จักวางแผนการเงิน รู้ว่าอะไรคุ้มไม่คุ้ม รู้จักเลือกกินให้ดีต่อสุขภาพ เพื่อให้ตัดสินใจได้ถูกต้อง</div>
+        </div>
+      </div>
+      <div class="principle-item reveal">
+        <div class="principle-num">5</div>
+        <div>
+          <div class="principle-title">เงื่อนไขคุณธรรม</div>
+          <div class="principle-body">ไม่เอาเปรียบผู้อื่น ไม่กักตุนของเกินจำเป็น และช่วยเหลือกันในสังคมเมื่อเกิดวิกฤติ — เพราะเราอยู่ร่วมกัน</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="chapter-divider"></div>
+
+<!-- STEPS -->
+<section id="steps">
+  <div class="section">
+    <span class="section-label reveal">บทที่ 3 — วิธีการ</span>
+    <h2 class="section-title reveal">5 ขั้นตอนรับมือ<br>ของแพงแบบชาวเมือง</h2>
+
+    <div class="steps-container">
+
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-dot">1</div>
+        <div class="step-content reveal">
+          <div class="step-title">🔍 เช็กสุขภาพการเงินตัวเอง</div>
+          <div class="step-body">ก่อนแก้อะไร ต้องรู้ก่อนว่าตัวเองอยู่ตรงไหน จดบันทึกรายรับ-รายจ่ายทุกบาทในแต่ละเดือน แล้วแบ่งเป็น "จำเป็น" กับ "ไม่จำเป็น" เพื่อให้เห็นว่าเงินหายไปไหน</div>
+          <div class="tip-box">
+            💡 <strong>ตัวอย่าง:</strong> คนเงินเดือน 20,000 บาทที่รู้สึกว่าไม่พอ อาจพบว่าใช้กับ Delivery และร้านสะดวกซื้อไปถึง <strong>6,000–8,000 บาท/เดือน</strong> โดยไม่รู้ตัว<br><br>
+            🛠️ <strong>เครื่องมือ:</strong> แอป MeowJot หรือสมุดจดรายรับ-รายจ่าย
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-dot">2</div>
+        <div class="step-content reveal">
+          <div class="step-title">✂️ ตัดรายจ่ายที่ไม่จำเป็น</div>
+          <div class="step-body">เมื่อเห็นภาพรายจ่ายแล้ว ระบุสิ่งที่สามารถลดหรือตัดได้ทันที เช่น Subscription ที่ไม่ได้ใช้ การสั่ง Delivery ทุกวัน หรือกาแฟแก้วละ 150 บาทวันละแก้ว</div>
+          <div class="tip-box">
+            💡 <strong>ประหยัดได้:</strong> ลดกาแฟนอก 1 แก้ว/วัน (80 บาท) = <strong>2,400 บาท/เดือน</strong><br>
+            ยกเลิก Streaming 2 แพลตฟอร์ม = <strong>400–600 บาท/เดือน</strong><br><br>
+            🛠️ <strong>เครื่องมือ:</strong> งบประมาณแบบ <strong>50/30/20</strong> (จำเป็น 50% / อยากได้ 30% / ออม 20%)
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-dot">3</div>
+        <div class="step-content reveal">
+          <div class="step-title">🍳 วางแผนอาหารล่วงหน้า</div>
+          <div class="step-body">อาหารคือรายจ่ายที่ใหญ่ที่สุดและควบคุมได้มากที่สุด วางแผนเมนู 1 สัปดาห์ล่วงหน้า ซื้อวัตถุดิบในคราวเดียว ลดทั้งค่าใช้จ่ายและการตัดสินใจสั่ง Delivery</div>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>มื้ออาหาร</th>
+                <th>สั่ง Delivery</th>
+                <th>ทำเอง</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>ข้าวผัดไข่</td><td>80–100 บาท</td><td>15–25 บาท</td></tr>
+              <tr><td>ข้าวผัดผักรวม</td><td>80–110 บาท</td><td>20–35 บาท</td></tr>
+              <tr><td>ข้าวไข่เจียว</td><td>80–100 บาท</td><td>10–20 บาท</td></tr>
+            </tbody>
+          </table>
+          <div class="save-highlight">
+            📊 สั่ง Delivery วันละ 2 มื้อ = <strong>6,000 บาท/เดือน</strong><br>
+            ทำเองวันละ 2 มื้อ = <strong>1,800 บาท/เดือน</strong><br>
+            <strong style="color: var(--amber); font-size: 1.1rem">ประหยัดได้ 4,200 บาท/เดือน</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-dot">4</div>
+        <div class="step-content reveal">
+          <div class="step-title">🏦 สร้างเงินสำรองฉุกเฉิน</div>
+          <div class="step-body">เงินส่วนที่เหลือจากการลดรายจ่าย ควรถูกแยกไปเป็นเงินสำรองฉุกเฉินก่อนเสมอ ตั้งเป้า 3 เดือนของค่าใช้จ่ายพื้นฐาน รองรับเหตุไม่คาดคิด เช่น ตกงาน เจ็บป่วย หรือของแพงพุ่งขึ้นกะทันหัน</div>
+          <div class="tip-box">
+            💡 <strong>ตัวอย่าง:</strong> ค่าใช้จ่ายพื้นฐาน 10,000 บาท/เดือน → ควรมีเงินสำรอง <strong>30,000 บาท</strong><br>
+            ออมเดือนละ 2,000 บาท → ครบภายใน <strong>15 เดือน</strong><br><br>
+            🛠️ ตั้ง Auto-Transfer ทุกวันที่รับเงินเดือนไปบัญชีแยก
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-dot">5</div>
+        <div class="step-content reveal">
+          <div class="step-title">📰 ติดตามข่าวสารอย่างมีวิจารณญาณ</div>
+          <div class="step-body">ในยามวิกฤติ ข้อมูลผิดและการกักตุนเกินจำเป็นคือตัวการที่ทำให้ปัญหารุนแรงขึ้น ตรวจสอบข้อมูลก่อนเชื่อ ตัดสินใจบนฐานความจริง ไม่ใช่ความกลัว</div>
+          <div class="tip-box">
+            ⚠️ <strong>บทเรียน 2026:</strong> เมื่อข่าวสงครามอิหร่านแพร่สะพัด เกิดการแห่ซื้อน้ำมันจนขาดตลาด ทั้งที่ไทยยังมีสำรองเพียงพอ การกักตุนจึงสร้างปัญหาเองโดยไม่จำเป็น<br><br>
+            🛠️ แหล่งข้อมูลที่เชื่อถือได้: กรมพลังงาน, ธนาคารแห่งประเทศไทย, สำนักงานสถิติแห่งชาติ
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="chapter-divider"></div>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="section">
+    <span class="section-label reveal">บทที่ 4 — ประโยชน์ที่ได้รับ</span>
+    <h2 class="section-title reveal">ผลที่เกิดขึ้นกับ<br>ตัวเองและสังคม</h2>
+
+    <div class="benefit-tabs reveal">
+      <button class="tab-btn active" onclick="showTab('self')">ต่อตัวเอง</button>
+      <button class="tab-btn" onclick="showTab('others')">ต่อผู้อื่น</button>
+      <button class="tab-btn" onclick="showTab('society')">ต่อสังคม</button>
+    </div>
+
+    <div id="tab-self" class="benefit-panel active reveal">
+      <ul class="benefit-list">
+        <li>เข้าใจว่าสงครามและวิกฤติโลกไม่ได้ไกลตัว แต่ส่งผลกับค่าใช้จ่ายในชีวิตประจำวันโดยตรง</li>
+        <li>ฝึกคิดและมองปัญหาแบบเป็นระบบ รับมือกับของแพงได้เหมาะกับตัวเอง</li>
+        <li>สามารถนำหลักเศรษฐกิจพอเพียงมาปรับใช้จริง เช่น วางแผนการเงินและเลือกใช้จ่ายให้คุ้มค่า</li>
+        <li>ได้ฝึกทักษะการค้นคว้าและนำเสนอข้อมูลในรูปแบบ E-Book</li>
+      </ul>
+    </div>
+
+    <div id="tab-others" class="benefit-panel reveal">
+      <ul class="benefit-list">
+        <li>คนอ่านสามารถเข้าใจสถานการณ์วิกฤติได้ง่ายขึ้น เพราะเชื่อมกับชีวิตประจำวัน</li>
+        <li>ได้แนวทางที่นำไปใช้ได้จริง เช่น การลดค่าใช้จ่าย การเลือกกิน หรือการวางแผนการเงิน</li>
+        <li>สามารถนำไปปรับใช้ต่อในชีวิตของตนเองหรือครอบครัวได้ทันที</li>
+      </ul>
+    </div>
+
+    <div id="tab-society" class="benefit-panel reveal">
+      <ul class="benefit-list">
+        <li>ช่วยส่งเสริมให้คนใช้ชีวิตแบบพอดี ไม่ฟุ่มเฟือย ลดการบริโภคเกินความจำเป็น</li>
+        <li>ทำให้คนตระหนักถึงความสำคัญของการเตรียมตัวรับมือวิกฤติ</li>
+        <li>สร้างชุมชนที่แข็งแรงและพึ่งพาตัวเองได้ในระยะยาว</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY QUOTE -->
+<section id="summary">
+  <div class="section" style="text-align: center">
+    <p class="big-quote reveal">
+      การใช้ชีวิตแบบพอเพียงไม่ใช่การขาดแคลน แต่คือการมีพอ รู้จักพอ และพร้อมรับมือกับความไม่แน่นอน
+    </p>
+    <p class="quote-attr reveal">— หลักปรัชญาเศรษฐกิจพอเพียง พระบาทสมเด็จพระเจ้าอยู่หัว รัชกาลที่ 9</p>
+
+    <div style="margin-top: 3rem; padding: 2rem; background: rgba(45,90,61,0.3); border: 1px solid rgba(200,150,42,0.2); border-radius: 4px;" class="reveal">
+      <p style="font-size: 1rem; color: rgba(245,237,214,0.8); line-height: 1.8;">
+        E-Book นี้จัดทำขึ้นเพื่อเผยแพร่แนวทางการรับมือกับวิกฤติค่าครองชีพ<br>
+        ผ่านหลักปรัชญาเศรษฐกิจพอเพียง สำหรับประชาชนในกรุงเทพมหานคร<br>
+        กลุ่มเป้าหมาย: นักศึกษา, คนวัยทำงาน, ครัวเรือนรายได้น้อยถึงปานกลาง
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-title">ทางรอดคนเมือง ในยุคของแพงและสงคราม</div>
+  <p class="footer-sub">
+    วิชา Gen 211 ปรัชญาเศรษฐกิจพอเพียง<br>
+    นายธีรวิทย์ พงษ์คุณาวุฒิ | รหัสนักศึกษา 65070502423
+  </p>
+  <div class="sources">
+    <a href="https://www.tcc.or.th/thai-helps-thai-plus/" target="_blank">ไทยช่วยไทยพลัส — tcc.or.th</a>
+    <a href="https://www.motorist.co.th/petrol-prices" target="_blank">ราคาน้ำมัน — motorist.co.th</a>
+  </div>
+</footer>
+
+<script>
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('progressBar').style.width = (scrollTop / docHeight * 100) + '%';
+
+    // Show nav after cover
+    const nav = document.getElementById('navbar');
+    nav.classList.toggle('visible', scrollTop > window.innerHeight * 0.7);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Tabs
+  function showTab(id) {
+    document.querySelectorAll('.benefit-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
