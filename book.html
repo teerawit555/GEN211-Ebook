@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ทางรอดคนเมือง — โหมดหนังสือ</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Noto+Serif+Thai:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="book.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="index.html" class="topbar-back">← กลับสู่โหมดเว็บ</a>
+  <div class="topbar-title">ทางรอดคนเมือง ในยุคของแพงและสงคราม</div>
+  <div class="topbar-info" id="spreadInfo">หน้า 1–2 / 20</div>
+</div>
+
+<!-- BOOK STAGE -->
+<div class="stage" id="stage">
+  <div class="book-wrap" id="bookWrap">
+
+    <div class="book-spine"></div>
+
+    <!-- SPREAD 1 : COVER + TOC -->
+    <div class="spread active" id="spread-0">
+      <div class="page page-left cover-page">
+        <div class="page-inner cover-inner">
+          <div class="cover-badge">E-Book · Gen 211 · ปรัชญาเศรษฐกิจพอเพียง</div>
+          <div class="cover-icon">🌾</div>
+          <div class="cover-title">ทางรอดคนเมือง</div>
+          <div class="cover-sub">ในยุคของแพงและสงคราม</div>
+          <div class="cover-rule"></div>
+          <div class="cover-meta">
+            การประยุกต์ใช้หลักปรัชญาเศรษฐกิจพอเพียง<br>
+            รับมือวิกฤติพลังงานและค่าครองชีพสูง<br>
+            สำหรับประชาชนในกรุงเทพมหานคร<br><br>
+            <strong style="color:rgba(245,237,214,0.85)">นายธีรวิทย์ พงษ์คุณาวุฒิ</strong><br>
+            รหัสนักศึกษา 65070502423
+          </div>
+        </div>
+      </div>
+
+      <div class="page page-right">
+        <div class="page-inner">
+            <div class="running-head">สารบัญ</div>
+            <div class="pc-chapter">Table of Contents</div>
+            <div class="pc-title">เนื้อหาทั้งหมด</div>
+            <div class="pc-divider"></div>
+
+            <div class="toc-book-list">
+                <div class="toc-book-row">
+                    <div class="toc-book-ch">บทนำ</div>
+                    <div class="toc-book-name">วัตถุประสงค์ของ E-Book</div>
+                    <div class="toc-book-page">หน้า 2–3</div>
+                </div>
+
+                <div class="toc-book-row">
+                    <div class="toc-book-ch">บทนำ</div>
+                    <div class="toc-book-name">พื้นที่และกลุ่มเป้าหมาย</div>
+                    <div class="toc-book-page">หน้า 4</div>
+                </div>
+
+                <div class="toc-book-row">
+                    <div class="toc-book-ch">บทที่ 1</div>
+                    <div class="toc-book-name">ที่มาและความสำคัญ</div>
+                    <div class="toc-book-page">หน้า 5–6</div>
+                </div>
+
+                <div class="toc-book-row">
+                    <div class="toc-book-ch">บทที่ 2</div>
+                    <div class="toc-book-name">หลักปรัชญาเศรษฐกิจพอเพียง</div>
+                    <div class="toc-book-page">หน้า 7–8</div>
+                </div>
+
+                <div class="toc-book-row">
+                    <div class="toc-book-ch">บทที่ 3</div>
+                    <div class="toc-book-name">อาหารและสุขภาพในยุคต้นทุนสูง</div>
+                    <div class="toc-book-page">หน้า 9–10</div>
+                </div>
+
+                <div class="toc-book-row">
+                    <div class="toc-book-ch">บทที่ 4</div>
+                    <div class="toc-book-name">5 ขั้นตอนรับมือของแพงแบบชาวเมือง</div>
+                    <div class="toc-book-page">หน้า 11–15</div>
+                </div>
+
+                <div class="toc-book-row">
+                    <div class="toc-book-ch">กรณีตัวอย่าง</div>
+                    <div class="toc-book-name">คนเมืองรายได้ 18,000 บาท</div>
+                    <div class="toc-book-page">หน้า 16</div>
+                </div>
+
+                <div class="toc-book-row">
+                    <div class="toc-book-ch">บทที่ 5</div>
+                    <div class="toc-book-name">ประโยชน์ที่ได้รับ</div>
+                    <div class="toc-book-page">หน้า 17</div>
+                </div>
+
+                <div class="toc-book-row">
+                    <div class="toc-book-ch">ท้ายเล่ม</div>
+                    <div class="toc-book-name">แหล่งอ้างอิง</div>
+                    <div class="toc-book-page">หน้า 18</div>
+                </div>
+            </div>
+
+        <div class="toc-note">
+            * ปกหน้าและปกหลังไม่นับรวมเป็นเลขหน้าเนื้อหา
+        </div>
+
+        <div class="page-num">i</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPREAD 2 : OBJECTIVES -->
+    <div class="spread" id="spread-1">
+      <div class="page page-left">
+        <div class="page-inner">
+          <div class="running-head">บทนำ — วัตถุประสงค์</div>
+          <div class="pc-chapter">บทนำ</div>
+          <div class="pc-title">E-Book นี้จัดทำขึ้นเพื่ออะไร?</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body">
+            E-Book เรื่อง <strong>“ทางรอดคนเมือง ในยุคของแพงและสงคราม”</strong>
+            ทำขึ้นเพื่อชวนมองว่าสงครามและวิกฤติพลังงานไม่ได้เป็นเรื่องไกลตัว
+            เพราะสุดท้ายแล้วมันส่งผลมาถึงค่าอาหาร ค่าเดินทาง และค่าของใช้ในชีวิตประจำวันของคนเมืองโดยตรง
+          </p>
+
+          <p class="pc-body">
+            นอกจากนี้ ยังต้องการนำหลักเศรษฐกิจพอเพียงมาเล่าในแบบที่เข้าใจง่ายและใช้ได้จริงกับชีวิตประจำวัน
+            ไม่ว่าจะเป็นการวางแผนเงิน ลดรายจ่าย ทำอาหารเอง หรือเตรียมเงินสำรองไว้เผื่อเหตุฉุกเฉิน
+          </p>
+
+          <div class="pc-highlight">
+            <strong>แก่นของเล่มนี้:</strong> ไม่ใช่แค่ “ประหยัด” แต่คือการคิดก่อนใช้ วางแผนก่อนตัดสินใจ
+            และเตรียมตัวให้พร้อมเมื่อสถานการณ์ไม่แน่นอน
+          </div>
+
+          <div class="page-num">2</div>
+        </div>
+      </div>
+
+      <div class="page page-right">
+        <div class="page-inner">
+          <div class="running-head">บทนำ — วัตถุประสงค์หลัก</div>
+          <div class="pc-chapter">วัตถุประสงค์หลัก</div>
+          <div class="pc-title">เป้าหมายของการจัดทำ</div>
+          <div class="pc-divider"></div>
+
+          <div class="pc-step"><div class="pc-step-num">1</div><div class="pc-step-body">ศึกษาผลกระทบของสงครามและวิกฤติพลังงานต่อค่าครองชีพของประชาชนในกรุงเทพมหานคร</div></div>
+          <div class="pc-step"><div class="pc-step-num">2</div><div class="pc-step-body">เผยแพร่ความรู้เกี่ยวกับหลักปรัชญาเศรษฐกิจพอเพียงในการรับมือกับวิกฤติ</div></div>
+          <div class="pc-step"><div class="pc-step-num">3</div><div class="pc-step-body">เสนอแนวทางลดรายจ่ายและจัดการอาหารในระดับครัวเรือน</div></div>
+          <div class="pc-step"><div class="pc-step-num">4</div><div class="pc-step-body">ส่งเสริมให้ประชาชนสามารถพึ่งพาตนเองและปรับตัวได้ในสถานการณ์วิกฤติ</div></div>
+          <div class="pc-step"><div class="pc-step-num">5</div><div class="pc-step-body">จัดทำ E-Book ที่สามารถใช้เป็นสื่อให้ความรู้และนำไปประยุกต์ใช้ได้จริง</div></div>
+
+          <div class="page-num">3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPREAD 3 : TARGET + INTRO -->
+    <div class="spread" id="spread-2">
+      <div class="page page-left">
+        <div class="page-inner">
+          <div class="running-head">บทนำ — พื้นที่และกลุ่มเป้าหมาย</div>
+          <div class="pc-chapter">พื้นที่และกลุ่มเป้าหมาย</div>
+          <div class="pc-title">ใครคือผู้อ่านหลัก?</div>
+          <div class="pc-divider"></div>
+
+          <div class="pc-highlight">
+            <strong>พื้นที่:</strong> กรุงเทพมหานคร<br>
+            เมืองที่พึ่งพาการขนส่งและตลาดเป็นหลัก จึงได้รับผลกระทบจากราคาพลังงานและต้นทุนสินค้าอย่างชัดเจน
+          </div>
+
+          <p class="pc-body" style="color:var(--gold);font-weight:700;margin-top:0.8rem">กลุ่มเป้าหมาย</p>
+          <ul class="pc-list">
+            <li>นักศึกษา ที่ต้องจัดการเงินในชีวิตประจำวันและค่าใช้จ่ายด้านอาหาร</li>
+            <li>คนวัยทำงาน ที่ต้องรับมือกับค่าเดินทาง ค่าอาหาร และค่าใช้จ่ายประจำเดือน</li>
+            <li>ครัวเรือนรายได้น้อยถึงปานกลาง ที่ได้รับผลกระทบจากค่าครองชีพสูงมากที่สุด</li>
+          </ul>
+
+          <div class="pc-highlight">
+            กลุ่มเหล่านี้สามารถนำหลักพอเพียงไปปรับใช้ได้ทันที เช่น ลดรายจ่ายที่ไม่จำเป็น
+            วางแผนอาหาร และเริ่มสร้างเงินสำรองฉุกเฉิน
+          </div>
+          <div class="target-image-box">
+            <img src="assets/peoplebkk.jpg" alt="กลุ่มเป้าหมายคนเมือง">
+          </div>
+
+          <div class="page-num">4</div>
+        </div>
+      </div>
+
+      <div class="page page-right">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 1 — ที่มาและความสำคัญ</div>
+          <div class="pc-chapter">บทที่ 1</div>
+          <div class="pc-title">วิกฤติที่ไม่ไกลตัวเลย</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body">
+            ในปี 2026 สถานการณ์ความตึงเครียดในตะวันออกกลางและความขัดแย้งระหว่างประเทศ
+            ส่งผลกระทบโดยตรงต่อราคาพลังงานในตลาดโลก ราคาน้ำมันพุ่งสูงกว่า
+            <strong>50%</strong> ทำให้ต้นทุนการขนส่งและราคาสินค้าทั่วไทยเพิ่มสูงขึ้นตาม
+          </p>
+
+          <p class="pc-body">
+            กรุงเทพมหานครซึ่งพึ่งพาการขนส่งและตลาดเป็นหลัก ได้รับผลกระทบอย่างเต็ม ๆ
+            ทั้งค่าอาหาร ค่าเดินทาง และค่าของใช้ในชีวิตประจำวัน
+          </p>
+          <div class="pc-divider"></div>
+          <div class="pc-chapter">รูปที่ 1 ราคาน้ำมันแก๊สโซฮอล์ 95</div>
+          <div class="pc-body"></div>
+          
+
+          <div class="pc-image-box">
+            <img src="assets/95.png" alt="กราฟราคาน้ำมันแก๊สโซฮอล์ 95">
+          </div>
+          <p class="pc-caption">ที่มา: motorist.co.th/petrol-prices</p>
+
+          <p class="pc-body">
+            จากข้อมูลราคาน้ำมันจะเห็นว่า เมื่อราคาพลังงานปรับตัวสูงขึ้น
+            ต้นทุนการขนส่งสินค้าและบริการต่าง ๆ ก็เพิ่มขึ้นตาม ส่งผลให้ประชาชนต้องแบกรับค่าครองชีพที่สูงขึ้น
+          </p>
+
+          <div class="page-num">5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPREAD 4 : OIL + GOVERNMENT -->
+    <div class="spread" id="spread-3">
+      <div class="page page-left">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 1 — ผลกระทบต่อสังคม</div>
+          <div class="pc-chapter">ตัวเลขสำคัญ</div>
+          <div class="pc-title">ผลกระทบที่ต้องรู้</div>
+          <div class="pc-divider"></div>
+
+          <div class="pc-stat-row">
+            <div class="pc-stat"><div class="pc-stat-num">+50%</div><div class="pc-stat-label">ราคาน้ำมันเพิ่มขึ้น</div></div>
+            <div class="pc-stat"><div class="pc-stat-num">10M+</div><div class="pc-stat-label">ประชาชนได้รับผล</div></div>
+            <div class="pc-stat"><div class="pc-stat-num">66%</div><div class="pc-stat-label">หนี้สาธารณะต่อ GDP</div></div>
+            <div class="pc-stat"><div class="pc-stat-num">20,000 ล้าน</div><div class="pc-stat-label">งบฯ ไทยช่วยไทยพลัส</div></div>
+            
+          </div>
+
+          <p class="pc-body">
+            แม้รัฐบาลจะออกโครงการ <strong>“ไทยช่วยไทยพลัส”</strong> เพื่อช่วยเหลือประชาชนกว่า 10 ล้านคน
+            แต่ด้วยภาระหนี้สาธารณะที่สูง การพึ่งพามาตรการภาครัฐเพียงอย่างเดียวจึงไม่ยั่งยืน
+          </p>
+
+          <div class="pc-highlight">
+            <strong>คำตอบที่แท้จริงอยู่ที่ปัจเจก</strong><br>
+            ประชาชนต้องเริ่มวางแผนตนเอง และใช้หลักปรัชญาเศรษฐกิจพอเพียงเป็นแนวทางในการรับมือ
+          </div>
+          <div class="thai-image-box">
+            <img src="assets/thaiplus.jfif" alt="ไทยช่วยไทยพลัส">
+          </div>
+
+          <div class="page-num">6</div>
+        </div>
+      </div>
+
+      <div class="page page-right">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 2 — หลักปรัชญา</div>
+          <div class="pc-chapter">บทที่ 2</div>
+          <div class="pc-title">เศรษฐกิจพอเพียง<br>คืออาวุธในยามวิกฤติ</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body">
+            หลักปรัชญาเศรษฐกิจพอเพียงของในหลวงรัชกาลที่ 9 ประกอบด้วย
+            <strong>3 หลักการ</strong> และ <strong>2 เงื่อนไข</strong>
+            ที่สามารถนำมาปรับใช้กับชีวิตคนเมืองได้อย่างลงตัว
+          </p>
+
+          <div class="pc-highlight">
+            หลักนี้ไม่ได้หมายถึงการใช้ชีวิตอย่างขาดแคลน
+            แต่คือการใช้ชีวิตอย่างมีเหตุผล พอดีกับฐานะ และเตรียมพร้อมรับความเปลี่ยนแปลง
+          </div>
+
+            <div class="sep-visual">
+            <div class="sep-head">3 ห่วง 2 เงื่อนไข</div>
+
+            <div class="sep-conditions">
+                <div class="sep-condition">
+                <div class="sep-condition-title">เงื่อนไขความรู้</div>
+                <div class="sep-condition-body">รู้จักคิด วิเคราะห์ วางแผน และใช้ข้อมูลอย่างรอบคอบ</div>
+                </div>
+
+                <div class="sep-condition">
+                <div class="sep-condition-title">เงื่อนไขคุณธรรม</div>
+                <div class="sep-condition-body">ซื่อสัตย์ ขยัน อดทน ไม่เอาเปรียบ และช่วยเหลือกันในสังคม</div>
+                </div>
+            </div>
+
+            <div class="sep-circles">
+                <div class="sep-circle sep-circle-left">พอประมาณ</div>
+                <div class="sep-circle sep-circle-right">มีเหตุผล</div>
+                <div class="sep-circle sep-circle-bottom">มีภูมิคุ้มกัน</div>
+                <div class="sep-center-label">3 ห่วง</div>
+            </div>
+
+            <div class="sep-result">
+                เมื่อนำ <strong>3 ห่วง</strong> และ <strong>2 เงื่อนไข</strong> มาปรับใช้ร่วมกัน
+                จะช่วยให้การดำเนินชีวิตเป็นไปอย่าง <strong>สมดุล มั่นคง และพร้อมรับการเปลี่ยนแปลง</strong>
+            </div>
+            </div>          
+
+          <div class="page-num">7</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPREAD 5 : PRINCIPLES 1 -->
+    <div class="spread" id="spread-4">
+      <div class="page page-left">
+        <div class="page-inner">
+        <div class="running-head">บทที่ 2 — 3 หลักการ</div>
+          <div class="pc-chapter">3 หลักการ</div>
+          <div class="pc-title">พอประมาณ · มีเหตุผล · มีภูมิคุ้มกัน</div>
+          <div class="pc-divider"></div>
+
+          <div class="pc-principle">
+            <div class="pc-pnum">1</div>
+            <div>
+              <div class="pc-ptitle">ความพอประมาณ</div>
+              <div class="pc-pbody">ใช้จ่ายให้เหมาะกับรายได้ของตัวเอง เลือกซื้อเฉพาะสิ่งที่จำเป็น ลดสิ่งที่ไม่จำเป็นลง ไม่ให้รายจ่ายเกินตัวในช่วงที่ค่าครองชีพพุ่งสูง</div>
+            </div>
+          </div>
+
+          <div class="pc-principle">
+            <div class="pc-pnum">2</div>
+            <div>
+              <div class="pc-ptitle">ความมีเหตุผล</div>
+              <div class="pc-pbody">ก่อนใช้เงินหรือตัดสินใจใด ๆ ควรคิดและวางแผน เปรียบเทียบราคาก่อนซื้อ วางแผนเมนูล่วงหน้า ไม่ซื้อเพราะความอยากหรือกระแส</div>
+            </div>
+          </div>
+
+          <div class="pc-principle">
+            <div class="pc-pnum">3</div>
+            <div>
+              <div class="pc-ptitle">การมีภูมิคุ้มกัน</div>
+              <div class="pc-pbody">เตรียมตัวไว้ก่อนเผื่อเกิดเหตุไม่คาดคิด มีเงินออมฉุกเฉิน ทำอาหารกินเองได้ และมีเครือข่ายคนช่วยเหลือกัน</div>
+            </div>
+          </div>
+          <div class="pc-chapter">2 เงื่อนไข</div>
+          <div class="pc-title">ความรู้และคุณธรรม</div>
+          <div class="pc-divider"></div>
+
+          <div class="pc-principle">
+            <div class="pc-pnum">4</div>
+            <div>
+              <div class="pc-ptitle">เงื่อนไขความรู้</div>
+              <div class="pc-pbody">รู้จักวางแผนการเงิน รู้ว่าอะไรคุ้มไม่คุ้ม รู้จักเลือกกินให้ดีต่อสุขภาพ เพื่อให้ตัดสินใจได้ถูกต้องในสถานการณ์ที่มีข้อจำกัด</div>
+            </div>
+          </div>
+
+          <div class="pc-principle">
+            <div class="pc-pnum">5</div>
+            <div>
+              <div class="pc-ptitle">เงื่อนไขคุณธรรม</div>
+              <div class="pc-pbody">ไม่เอาเปรียบผู้อื่น ไม่กักตุนของเกินจำเป็น และช่วยเหลือกันในสังคมเมื่อเกิดวิกฤติ เพราะเราอยู่ร่วมกัน</div>
+            </div>
+          </div>
+
+          <div class="pc-highlight">
+            เมื่อนำ 3 หลักการและ 2 เงื่อนไขมารวมกัน คนเมืองจะสามารถรับมือกับของแพงได้อย่างเป็นระบบมากขึ้น
+          </div>
+
+          <div class="page-num">8</div>
+        </div>
+      </div>
+
+      <div class="page page-right">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 3 — สุขภาพและอาหาร</div>
+          <div class="pc-chapter">บทที่ 3</div>
+          <div class="pc-title">อาหารและสุขภาพ<br>ในยุคต้นทุนสูง</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body">
+            ราคาพลังงานที่เพิ่มขึ้นส่งผลให้ต้นทุนอาหารสูงขึ้นตาม
+            คนเมืองต้องแบกรับค่าใช้จ่ายด้านอาหารที่สูงขึ้น และอาจส่งผลต่อคุณภาพการบริโภคโดยตรง
+          </p>
+
+          <p class="pc-body">
+            การประยุกต์ใช้หลักปรัชญาเศรษฐกิจพอเพียงในด้านอาหารและสุขภาพ
+            จึงสำคัญไม่แพ้การวางแผนการเงิน เพราะสุขภาพที่แย่ลงอาจนำไปสู่รายจ่ายฉุกเฉินที่สูงกว่าเดิม
+          </p>
+
+          <div class="pc-highlight">
+            <strong>ประเด็นสำคัญ:</strong> การกินให้ดีในงบจำกัด ทำได้ด้วยการวางแผนเมนู
+            ซื้อวัตถุดิบให้คุ้ม และลดการพึ่งพาอาหารสำเร็จรูปหรือ Delivery
+          </div>
+
+          <div class="page-num">9</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPREAD 6 : CONDITIONS + HEALTH -->
+    <div class="spread" id="spread-5">
+      <div class="page page-left">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 3 — แนวทางด้านอาหาร</div>
+          <div class="pc-chapter">สุขภาพและอาหาร</div>
+          <div class="pc-title">จัดการอาหารอย่างพอเพียง</div>
+          <div class="pc-divider"></div>
+
+          <div class="pc-step"><div class="pc-step-num">🥗</div><div class="pc-step-body"><strong>วางแผนมื้ออาหาร</strong> — เลือกอาหารที่มีประโยชน์ในงบที่จำกัด วางแผนเมนูล่วงหน้า ลดการพึ่งพาอาหารสำเร็จรูปที่แพงและโภชนาการต่ำ</div></div>
+          <div class="pc-step"><div class="pc-step-num">🍳</div><div class="pc-step-body"><strong>ทำอาหารเองบางมื้อ</strong> — ลดการสั่ง Delivery และหันมาทำอาหารเองแม้เพียงบางมื้อ ช่วยลดรายจ่ายและควบคุมคุณภาพโภชนาการได้ดีกว่า</div></div>
+          <div class="pc-step"><div class="pc-step-num">🌱</div><div class="pc-step-body"><strong>ปลูกผักในพื้นที่จำกัด</strong> — แม้อยู่คอนโดหรืออพาร์ตเมนต์ก็ปลูกผักสวนครัวในกระถางได้ เช่น ต้นหอม ผักชี พริก</div></div>
+          <div class="pc-step"><div class="pc-step-num">💊</div><div class="pc-step-body"><strong>ป้องกันดีกว่ารักษา</strong> — การดูแลสุขภาพเชิงป้องกันด้วยอาหารที่ดีและการออกกำลังกาย คือการลงทุนระยะยาว</div></div>
+
+          <div class="page-num">10</div>
+        </div>
+      </div>
+
+      <div class="page page-right">
+        <div class="page-inner">
+            <div class="running-head">บทที่ 4 — วิธีการ</div>
+            <div class="pc-chapter">บทที่ 4</div>
+            <div class="pc-title">5 ขั้นตอนรับมือ<br>ของแพงแบบชาวเมือง</div>
+            <div class="pc-divider"></div>
+
+            <p class="pc-body">
+            การรับมือของแพงไม่จำเป็นต้องเริ่มจากการเปลี่ยนชีวิตทั้งหมดทันที
+            แต่สามารถเริ่มจากการมองเห็นพฤติกรรมการใช้เงินของตัวเอง แล้วค่อย ๆ ปรับทีละขั้น
+            </p>
+
+            <div class="step-vertical-list">
+            <div class="step-vertical-item">
+                <div class="step-vertical-num">1</div>
+                <div class="step-vertical-content">
+                <div class="step-vertical-title">เช็กสุขภาพการเงิน</div>
+                <div class="step-vertical-body">จดรายรับ–รายจ่าย เพื่อดูว่าเงินหายไปกับอะไร</div>
+                </div>
+            </div>
+
+            <div class="step-vertical-item">
+                <div class="step-vertical-num">2</div>
+                <div class="step-vertical-content">
+                <div class="step-vertical-title">ตัดรายจ่ายที่ไม่จำเป็น</div>
+                <div class="step-vertical-body">ลดสิ่งที่ใช้เพราะความเคยชิน เช่น Delivery กาแฟ หรือ Subscription ที่ไม่ได้ใช้</div>
+                </div>
+            </div>
+
+            <div class="step-vertical-item">
+                <div class="step-vertical-num">3</div>
+                <div class="step-vertical-content">
+                <div class="step-vertical-title">วางแผนอาหาร</div>
+                <div class="step-vertical-body">วางเมนูล่วงหน้า ซื้อวัตถุดิบให้คุ้ม และทำอาหารเองบางมื้อ</div>
+                </div>
+            </div>
+
+            <div class="step-vertical-item">
+                <div class="step-vertical-num">4</div>
+                <div class="step-vertical-content">
+                <div class="step-vertical-title">สร้างเงินสำรองฉุกเฉิน</div>
+                <div class="step-vertical-body">แยกเงินออมก่อนใช้ เพื่อรองรับเหตุไม่คาดคิดในอนาคต</div>
+                </div>
+            </div>
+
+            <div class="step-vertical-item">
+                <div class="step-vertical-num">5</div>
+                <div class="step-vertical-content">
+                <div class="step-vertical-title">ติดตามข่าวสารอย่างมีวิจารณญาณ</div>
+                <div class="step-vertical-body">ตรวจสอบข้อมูลจากแหล่งที่เชื่อถือได้ ไม่ตื่นตระหนกและไม่กักตุนเกินจำเป็น</div>
+                </div>
+            </div>
+            </div>
+
+            <div class="pc-highlight step-summary">
+            <strong>ภาพรวม:</strong> เริ่มจากรู้จักพฤติกรรมการใช้เงินของตัวเอง
+            ลดสิ่งที่ไม่จำเป็น วางแผนอาหาร สร้างเงินสำรอง และตัดสินใจบนข้อมูลที่น่าเชื่อถือ
+            </div>
+
+          <div class="page-num">11</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPREAD 7 : HEALTH PRACTICAL -->
+    <div class="spread" id="spread-6">
+      <div class="page page-left">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 4 — ขั้นตอนที่ 1-2</div>
+          <div class="pc-chapter">ขั้นตอนที่ 1</div>
+          <div class="pc-title">เช็กสุขภาพการเงินตัวเอง</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body">
+            ก่อนแก้อะไร ต้องรู้ก่อนว่าตัวเองอยู่ตรงไหน
+            จดบันทึกรายรับ-รายจ่ายทุกบาทในแต่ละเดือน แล้วแบ่งเป็น
+            <strong>“จำเป็น”</strong> กับ <strong>“ไม่จำเป็น”</strong>
+            เพื่อให้เห็นว่าเงินหายไปไหน
+          </p>
+
+          <div class="pc-highlight">
+            <strong>ตัวอย่าง:</strong> คนเงินเดือน 20,000 บาทที่รู้สึกว่าไม่พอ
+            อาจพบว่าใช้กับ Delivery และร้านสะดวกซื้อไปถึง <strong>6,000–8,000 บาท/เดือน</strong> โดยไม่รู้ตัว
+          </div>
+
+          <p class="pc-body"><strong>เครื่องมือที่ใช้ได้:</strong> แอป MeowJot หรือสมุดจดรายรับ-รายจ่าย</p>
+
+          <div class="pc-chapter">ขั้นตอนที่ 2</div>
+          <div class="pc-title">ตัดรายจ่ายที่ไม่จำเป็น</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body">
+            เมื่อเห็นภาพรายจ่ายแล้ว ให้ระบุสิ่งที่สามารถลดหรือตัดได้ทันที
+            เช่น Subscription ที่ไม่ได้ใช้ การสั่ง Delivery ทุกวัน หรือกาแฟแก้วละ 150 บาทวันละแก้ว
+          </p>
+
+          <div class="pc-highlight">
+            <strong>ประหยัดได้:</strong><br>
+            ลดกาแฟนอก 1 แก้ว/วัน (80 บาท) = <strong>2,400 บาท/เดือน</strong><br>
+            ยกเลิก Streaming 2 แพลตฟอร์ม = <strong>400–600 บาท/เดือน</strong>
+          </div>
+
+          <p class="pc-body">
+            เครื่องมือที่ช่วยจัดงบได้ง่ายคือ <strong>50/30/20</strong>
+            คือ จำเป็น 50% / อยากได้ 30% / ออม 20%
+          </p>
+          
+
+          <div class="page-num">12</div>
+        </div>
+      </div>
+
+      <div class="page page-right">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 4 — ขั้นตอนที่ 2-3</div>
+          <div class="book-budget-viz" id="budgetViz">
+            <p class="budget-viz-label">ลองใส่รายได้ของคุณ</p>
+
+            <div class="budget-input-row">
+                <input
+                type="number"
+                id="incomeInput"
+                class="budget-input"
+                placeholder="เช่น 18000"
+                min="1000"
+                max="999999"
+                >
+                <span class="budget-currency">บาท/เดือน</span>
+            </div>
+
+            <div class="donut-wrapper">
+                <svg id="donutSvg" viewBox="0 0 220 220" width="180" height="180">
+                <circle
+                    class="donut-bg"
+                    cx="110"
+                    cy="110"
+                    r="80"
+                    fill="none"
+                    stroke="rgba(44,36,22,0.08)"
+                    stroke-width="36"
+                />
+
+                <circle
+                    id="arc-necessary"
+                    class="donut-arc"
+                    cx="110"
+                    cy="110"
+                    r="80"
+                    fill="none"
+                    stroke="#E8B44A"
+                    stroke-width="36"
+                    stroke-dasharray="0 502.65"
+                    stroke-dashoffset="502.65"
+                    transform="rotate(-90 110 110)"
+                />
+
+                <circle
+                    id="arc-want"
+                    class="donut-arc"
+                    cx="110"
+                    cy="110"
+                    r="80"
+                    fill="none"
+                    stroke="#7A9E7E"
+                    stroke-width="36"
+                    stroke-dasharray="0 502.65"
+                    stroke-dashoffset="502.65"
+                    transform="rotate(-90 110 110)"
+                />
+
+                <circle
+                    id="arc-save"
+                    class="donut-arc"
+                    cx="110"
+                    cy="110"
+                    r="80"
+                    fill="none"
+                    stroke="#4A9E7A"
+                    stroke-width="36"
+                    stroke-dasharray="0 502.65"
+                    stroke-dashoffset="502.65"
+                    transform="rotate(-90 110 110)"
+                />
+
+                <text
+                    id="donut-center-num"
+                    x="110"
+                    y="105"
+                    text-anchor="middle"
+                    font-family="'Noto Serif Thai',serif"
+                    font-size="22"
+                    font-weight="900"
+                    fill="#2C2416"
+                >50/30</text>
+
+                <text
+                    id="donut-center-label"
+                    x="110"
+                    y="125"
+                    text-anchor="middle"
+                    font-family="'Sarabun',sans-serif"
+                    font-size="11"
+                    fill="rgba(44,36,22,0.55)"
+                >/20</text>
+                </svg>
+
+                <div class="donut-legend">
+                <div class="legend-item" id="leg-necessary">
+                    <span class="legend-dot" style="background:#E8B44A"></span>
+                    <div>
+                    <div class="legend-title">จำเป็น <span class="legend-pct">50%</span></div>
+                    <div class="legend-amount" id="amt-necessary">—</div>
+                    </div>
+                </div>
+
+                <div class="legend-item" id="leg-want">
+                    <span class="legend-dot" style="background:#7A9E7E"></span>
+                    <div>
+                    <div class="legend-title">อยากได้ <span class="legend-pct">30%</span></div>
+                    <div class="legend-amount" id="amt-want">—</div>
+                    </div>
+                </div>
+
+                <div class="legend-item" id="leg-save">
+                    <span class="legend-dot" style="background:#4A9E7A"></span>
+                    <div>
+                    <div class="legend-title">ออม <span class="legend-pct">20%</span></div>
+                    <div class="legend-amount" id="amt-save">—</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="pc-chapter step3-heading">ขั้นตอนที่ 3</div>
+            <div class="pc-title">วางแผนอาหารล่วงหน้า</div>
+            <div class="pc-divider"></div>
+
+            <p class="pc-body">
+                อาหารคือรายจ่ายที่ใหญ่ที่สุดและควบคุมได้มากที่สุด
+                วางแผนเมนู 1 สัปดาห์ล่วงหน้า ซื้อวัตถุดิบในคราวเดียว
+                ลดทั้งค่าใช้จ่ายและการตัดสินใจสั่ง Delivery
+            </p>
+
+            <table class="pc-table">
+                <thead><tr><th>มื้ออาหาร</th><th>สั่ง Delivery</th><th>ทำเอง</th></tr></thead>
+                <tbody>
+                <tr><td>ข้าวผัดไข่</td><td>80–100 บาท</td><td class="good">15–25 บาท</td></tr>
+                <tr><td>ข้าวผัดผักรวม</td><td>80–110 บาท</td><td class="good">20–35 บาท</td></tr>
+                <tr><td>ข้าวไข่เจียว</td><td>80–100 บาท</td><td class="good">10–20 บาท</td></tr>
+                </tbody>
+            </table>
+
+          <div class="page-num">13</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPREAD 8 : STEP 1-2 -->
+    <div class="spread" id="spread-7">
+      <div class="page page-left">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 4 — ผลลัพธ์จากการทำอาหารเอง</div>
+          <div class="pc-chapter">เปรียบเทียบค่าอาหาร</div>
+          <div class="pc-title">ทำเองประหยัดกว่าชัดเจน</div>
+          <div class="pc-divider"></div>
+
+          <div class="pc-highlight">
+            สั่ง Delivery วันละ 2 มื้อ = <strong>6,000 บาท/เดือน</strong><br>
+            ทำเองวันละ 2 มื้อ = <strong>1,800 บาท/เดือน</strong><br>
+            <strong style="color:#2D6A3F">ประหยัดได้ 4,200 บาท/เดือน</strong>
+          </div>
+
+          <p class="pc-body">
+            เงินที่ประหยัดได้จากอาหารสามารถนำไปใช้สร้างเงินสำรองฉุกเฉิน
+            หรือแบ่งเป็นเงินออมระยะยาวได้โดยไม่ต้องเพิ่มรายได้ทันที
+          </p>
+
+          <div class="pc-highlight">
+            <strong>หลักพอประมาณ:</strong> ไม่จำเป็นต้องเลิกกินนอกบ้านทั้งหมด
+            แต่อาจเริ่มจากทำอาหารเองบางมื้อ และเลือกสั่งเฉพาะวันที่จำเป็นจริง ๆ
+          </div>
+        <div class="pc-chapter">ขั้นตอนที่ 4</div>
+          <div class="pc-title">สร้างเงินสำรองฉุกเฉิน</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body">
+            เงินส่วนที่เหลือจากการลดรายจ่าย ควรถูกแยกไปเป็นเงินสำรองฉุกเฉินก่อนเสมอ
+            ตั้งเป้า 3 เดือนของค่าใช้จ่ายพื้นฐาน เพื่อรองรับเหตุไม่คาดคิด เช่น ตกงาน เจ็บป่วย
+            หรือของแพงพุ่งขึ้นกะทันหัน
+          </p>
+
+          <div class="pc-highlight">
+            ค่าใช้จ่ายพื้นฐาน 10,000 บาท/เดือน → เป้าหมายเงินสำรอง 30,000 บาท<br>
+            ถ้าออมได้ 2,000 บาท/เดือน → ใช้เวลาประมาณ 15 เดือน
+          </div>
+
+          <p class="pc-body">
+            วิธีที่ทำได้ง่ายคือแยกเงินออมทันทีหลังรับเงินเดือน
+            ก่อนนำเงินส่วนที่เหลือไปใช้จ่ายในชีวิตประจำวัน
+          </p>
+
+          <div class="page-num">14</div>
+        </div>
+      </div>
+
+      <div class="page page-right">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 4 — ขั้นตอนที่ 5</div>
+          <div class="pc-chapter">ขั้นตอนที่ 5</div>
+          <div class="pc-title">ติดตามข่าวสารอย่างมีวิจารณญาณ</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body">
+            ในยามวิกฤติ ข้อมูลผิดและการกักตุนเกินจำเป็นคือตัวการที่ทำให้ปัญหารุนแรงขึ้น
+            จึงควรตรวจสอบข้อมูลก่อนเชื่อ และตัดสินใจบนฐานความจริง ไม่ใช่ความกลัว
+          </p>
+
+          <div class="pc-highlight">
+            <strong>บทเรียน 2026:</strong> เมื่อข่าวสงครามอิหร่านแพร่สะพัด
+            เกิดการแห่ซื้อน้ำมันจนขาดตลาด ทั้งที่ไทยยังมีสำรองเพียงพอ
+            การกักตุนจึงสร้างปัญหาเองโดยไม่จำเป็น
+          </div>
+
+          <p class="pc-body"><strong>แหล่งข้อมูลที่เชื่อถือได้:</strong></p>
+          <ul class="pc-list">
+            <li>กรมพลังงาน</li>
+            <li>ธนาคารแห่งประเทศไทย</li>
+            <li>สำนักงานสถิติแห่งชาติ</li>
+          </ul>
+
+          <div class="page-num">15</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPREAD 11 : CASE STUDY + BENEFITS -->
+    <div class="spread" id="spread-8">
+      <div class="page page-left">
+        <div class="page-inner">
+          <div class="running-head">กรณีตัวอย่าง — คนเมืองรายได้ 18,000 บาท</div>
+          <div class="pc-chapter">กรณีตัวอย่าง</div>
+          <div class="pc-title">คนเมืองรายได้ 18,000 บาท</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body">
+            ลองดูตัวอย่างของคนวัยทำงานในกรุงเทพฯ ที่มีรายได้เดือนละ 18,000 บาท
+            และต้องเจอกับค่าอาหาร ค่าเดินทาง รวมถึงค่าของใช้ที่แพงขึ้นเรื่อย ๆ
+          </p>
+
+          <table class="pc-table">
+            <thead><tr><th>รายการ</th><th>ก่อนปรับ</th><th>หลังปรับ</th><th>ประหยัดได้</th></tr></thead>
+            <tbody>
+              <tr><td>ค่าอาหาร</td><td>6,000</td><td class="good">3,000</td><td class="good">3,000</td></tr>
+              <tr><td>กาแฟ/เครื่องดื่ม</td><td>2,400</td><td class="good">800</td><td class="good">1,600</td></tr>
+              <tr><td>ค่าเดินทาง</td><td>2,500</td><td class="good">2,000</td><td class="good">500</td></tr>
+              <tr><td>Subscription</td><td>600</td><td class="good">200</td><td class="good">400</td></tr>
+              <tr><td><strong>เงินออม</strong></td><td>500</td><td class="good"><strong>3,000</strong></td><td class="good">+2,500</td></tr>
+            </tbody>
+          </table>
+          <div class="pc-chapter">บทเรียนจากกรณีตัวอย่าง <strong>ปรับเล็กน้อย แต่เห็นผลชัดเจน</strong></div>
+
+          <!-- <div class="pc-divider"></div> -->
+
+          <div class="pc-stat-row">
+            <div class="pc-stat"><div class="pc-stat-num">17,500</div><div class="pc-stat-label">รายจ่ายก่อนปรับ</div></div>
+            <div class="pc-stat"><div class="pc-stat-num">12,000</div><div class="pc-stat-label">รายจ่ายหลังปรับ</div></div>
+          </div>
+
+          <p class="pc-body">
+            เมื่อนำหลัก <strong>พอประมาณ มีเหตุผล และสร้างภูมิคุ้มกัน</strong> มาปรับใช้
+            ผลลัพธ์เปลี่ยนไปอย่างชัดเจน โดยเฉพาะเงินออมที่เพิ่มขึ้นจาก 500 บาทเป็น 3,000 บาทต่อเดือน
+          </p>
+
+          <div class="pc-highlight">
+            เศรษฐกิจพอเพียงไม่ได้แปลว่าต้องประหยัดจนลำบาก
+            แต่คือการ <strong>รู้ว่าอะไรจำเป็น อะไรลดได้</strong>
+            และเตรียมตัวให้พร้อมเมื่อสถานการณ์ไม่แน่นอน
+          </div>
+
+          <div class="page-num">16</div>
+        </div>
+      </div>
+
+      <div class="page page-right">
+        <div class="page-inner">
+          <div class="running-head">บทที่ 5 — ประโยชน์ที่ได้รับ</div>
+          <div class="pc-chapter">บทที่ 5</div>
+          <div class="pc-title">ผลที่เกิดขึ้นกับ<br>ตัวเอง ต่อผู้อื่นและสังคม</div>
+          <div class="pc-divider"></div>
+
+          <p class="pc-body" style="color:var(--gold);font-weight:700">ต่อตัวเอง</p>
+          <ul class="pc-list">
+            <li>เข้าใจว่าสงครามและวิกฤติโลกไม่ได้ไกลตัว แต่ส่งผลกับค่าใช้จ่ายในชีวิตประจำวันโดยตรง</li>
+            <li>ฝึกคิดและมองปัญหาแบบเป็นระบบ รับมือกับของแพงได้เหมาะกับตัวเอง</li>
+            <li>นำหลักเศรษฐกิจพอเพียงมาปรับใช้จริง เช่น วางแผนการเงินและเลือกใช้จ่ายให้คุ้มค่า</li>
+            <li>ได้ฝึกทักษะการค้นคว้าและนำเสนอข้อมูลในรูปแบบ E-Book</li>
+          </ul>
+          <p class="pc-body" style="color:var(--gold);font-weight:700">ต่อผู้อื่น</p>
+          <ul class="pc-list">
+            <li>คนอ่านสามารถเข้าใจสถานการณ์วิกฤติได้ง่ายขึ้น เพราะเชื่อมกับชีวิตประจำวัน</li>
+            <li>ได้แนวทางที่นำไปใช้ได้จริง เช่น การลดค่าใช้จ่าย การเลือกกิน หรือการวางแผนการเงิน</li>
+            <li>สามารถนำไปปรับใช้ต่อในชีวิตของตนเองหรือครอบครัวได้ทันที</li>
+          </ul>
+
+          <p class="pc-body" style="color:var(--gold);font-weight:700">ต่อสังคม</p>
+          <ul class="pc-list">
+            <li>ส่งเสริมให้คนใช้ชีวิตแบบพอดี ไม่ฟุ่มเฟือย ลดการบริโภคเกินความจำเป็น</li>
+            <li>ทำให้คนตระหนักถึงความสำคัญของการเตรียมตัวรับมือวิกฤติ</li>
+            <li>สร้างชุมชนที่แข็งแรงและพึ่งพาตัวเองได้ในระยะยาว</li>
+          </ul>
+          <div class="page-num">17</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPREAD 10 : EMERGENCY + NEWS -->
+    <div class="spread" id="spread-9">
+      <div class="page page-left">
+        <div class="page-inner">
+          <div class="running-head">ท้ายเล่ม — แหล่งอ้างอิง</div>
+          <div class="pc-chapter">ท้ายเล่ม</div>
+          <div class="pc-title">แหล่งอ้างอิง</div>
+          <div class="pc-divider"></div>
+
+          <div class="pc-ref"><div class="pc-ref-num">01</div><div><div class="pc-ref-title">โครงการไทยช่วยไทยพลัส</div><div class="pc-ref-src">หอการค้าไทย — tcc.or.th/thai-helps-thai-plus</div></div></div>
+          <div class="pc-ref"><div class="pc-ref-num">02</div><div><div class="pc-ref-title">ข้อมูลราคาน้ำมันในประเทศไทยรายวัน</div><div class="pc-ref-src">Motorist Thailand — motorist.co.th/petrol-prices</div></div></div>
+          <div class="pc-ref"><div class="pc-ref-num">03</div><div><div class="pc-ref-title">หลักปรัชญาของเศรษฐกิจพอเพียง</div><div class="pc-ref-src">สำนักงานคณะกรรมการพัฒนาการเศรษฐกิจและสังคมแห่งชาติ — nesdc.go.th</div></div></div>
+          <div class="pc-ref"><div class="pc-ref-num">04</div><div><div class="pc-ref-title">รายงานสถานการณ์ราคาสินค้าและบริการ</div><div class="pc-ref-src">กระทรวงพาณิชย์ไทย — price.moc.go.th</div></div></div>
+          <div class="pc-ref"><div class="pc-ref-num">05</div><div><div class="pc-ref-title">ข้อมูลราคาพลังงานและนโยบายพลังงาน</div><div class="pc-ref-src">กรมพัฒนาพลังงานทดแทนและอนุรักษ์พลังงาน — dede.go.th</div></div></div>
+
+          <div style="margin-top:auto;padding-top:0.8rem;border-top:1px solid rgba(200,150,42,0.15);font-size:0.68rem;color:rgba(74,60,40,0.4);text-align:center">
+            © 2026 · วิชา Gen 211 · จัดทำเพื่อการศึกษาเท่านั้น
+          </div>
+
+          <div class="page-num">18</div>
+        </div>
+      </div>
+
+      <div class="page page-right back-page">
+        <div class="page-inner">
+          <div style="text-align:center;padding:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:1rem">
+            <div style="font-size:3rem">🌾</div>
+            <div style="font-family:'Noto Serif Thai',serif;font-size:1.15rem;font-weight:900;color:rgba(245,237,214,0.85);line-height:1.55">
+              “การใช้ชีวิตแบบพอเพียง<br>
+              ไม่ใช่การขาดแคลน<br>
+              แต่คือการมีพอ รู้จักพอ<br>
+              และพร้อมรับมือกับ<br>
+              ความไม่แน่นอน”
+            </div>
+            <div style="width:44px;height:1px;background:rgba(200,150,42,0.45)"></div>
+            <div style="font-size:0.72rem;color:rgba(245,237,214,0.4);line-height:1.8">
+              หลักปรัชญาเศรษฐกิจพอเพียง<br>
+              พระบาทสมเด็จพระเจ้าอยู่หัว รัชกาลที่ 9<br><br>
+              นายธีรวิทย์ พงษ์คุณาวุฒิ<br>
+              รหัสนักศึกษา 65070502423
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NAV ARROWS -->
+  <button class="nav-arrow nav-left" id="btnPrev" onclick="flipSpread(-1)">&#8592;</button>
+  <button class="nav-arrow nav-right" id="btnNext" onclick="flipSpread(1)">&#8594;</button>
+</div>
+
+<div class="kbd-hint">← → เพื่อพลิกหน้า &nbsp;|&nbsp; ESC กลับหน้าเว็บ</div>
+
+<script src="book.js"></script>
+</body>
+</html>
