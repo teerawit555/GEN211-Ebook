@@ -896,7 +896,154 @@
 }
 
 /* ===== HEALTH SECTION ===== */
-.health-grid {
+
+.health-grid-v2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+ 
+/* Featured spans all 3 cols on top row */
+.hcard--featured {
+  grid-column: 1 / -1;
+}
+ 
+/* Base card */
+.hcard {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(200,150,42,0.15);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.hcard:hover {
+  border-color: rgba(200,150,42,0.35);
+  background: rgba(255,255,255,0.06);
+}
+ 
+/* Featured card internals */
+.hcard--featured {
+  display: flex;
+  align-items: stretch;
+  min-height: 160px;
+}
+.hcard-inner {
+  flex: 1;
+  padding: 2rem 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+.hcard-deco {
+  width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  padding: 1.5rem;
+}
+.hcard-deco svg {
+  width: 100%;
+  height: auto;
+}
+ 
+.hcard-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(200,150,42,0.7);
+  font-weight: 600;
+  font-family: 'Sarabun', sans-serif;
+}
+.hcard-title {
+  font-family: 'Noto Serif Thai', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #F5EDD6;
+  line-height: 1.3;
+}
+.hcard-body {
+  font-size: 0.9rem;
+  color: rgba(245, 237, 214, 0.753);
+  line-height: 1.65;
+  font-family: 'Sarabun', sans-serif;
+  max-width: 480px;
+}
+ 
+/* Stat badge inside featured */
+.hcard-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+.hstat-num {
+  font-family: 'Noto Serif Thai', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #E8B44A;
+  line-height: 1;
+}
+.hstat-desc {
+  font-size: 0.8rem;
+  color: rgba(245,237,214,0.45);
+  font-family: 'Sarabun', sans-serif;
+  line-height: 1.4;
+}
+ 
+/* Small cards */
+.hcard--sm {
+  padding: 1.4rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.hcard--sm .hcard-title {
+  font-size: 1rem;
+}
+.hcard--sm .hcard-body {
+  font-size: 0.85rem;
+}
+.hcard-num {
+  font-family: 'Noto Serif Thai', serif;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: rgba(200,150,42,0.35);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+ 
+/* Accent variant */
+.hcard--accent {
+  border-color: rgba(200,150,42,0.25);
+  background: rgba(200,150,42,0.06);
+}
+ 
+/* Responsive */
+@media (max-width: 640px) {
+  .health-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+  .hcard--featured {
+    flex-direction: column;
+    min-height: unset;
+  }
+  .hcard-deco {
+    width: 100%;
+    height: 100px;
+  }
+  .hcard-inner {
+    padding: 1.5rem;
+  }
+}
+
+/* .health-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.2rem;
@@ -924,7 +1071,7 @@
   font-size: 1rem;
   font-weight: 700;
   /* color: var(--cream); */
-  color: var(--amber);
+  /* color: var(--amber);
   margin-bottom: 0.5rem;
 }
 
@@ -932,7 +1079,7 @@
   font-size: 0.88rem;
   color: rgba(245,237,214,0.7);
   line-height: 1.7;
-}
+} */ 
 
 /* ===== TARGET BOX ===== */
 .target-box {

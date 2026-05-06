@@ -6,6 +6,31 @@
 <title>ทางรอดคนเมือง ในยุคของแพงและสงคราม</title>
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Noto+Serif+Thai:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* Tip label replacements for emoji markers */
+.tip-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber, #C8962A);
+  border: 1px solid rgba(200,150,42,0.4);
+  border-radius: 2px;
+  padding: 0.15em 0.5em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  line-height: 1.8;
+}
+.tip-label.note {
+  color: rgba(245,237,214,0.6);
+  border-color: rgba(245,237,214,0.2);
+}
+.tip-label.warn {
+  color: #e8956a;
+  border-color: rgba(232,149,106,0.4);
+}
+</style>
 </head>
 <body>
 
@@ -168,7 +193,7 @@
       </ol>
     </div>
     <div class="target-box reveal">
-      <p class="target-box-title">📍 พื้นที่และกลุ่มเป้าหมาย</p>
+      <p class="target-box-title">พื้นที่และกลุ่มเป้าหมาย</p>
       <div class="target-grid">
         <div class="target-item">
           <div class="target-label">พื้นที่</div>
@@ -178,9 +203,9 @@
         <div class="target-item">
           <div class="target-label">กลุ่มเป้าหมาย</div>
           <div class="target-tags">
-            <span class="target-tag">🎓 นักศึกษา</span>
-            <span class="target-tag">💼 คนวัยทำงาน</span>
-            <span class="target-tag">🏠 ครัวเรือนรายได้น้อย–ปานกลาง</span>
+            <span class="target-tag">นักศึกษา</span>
+            <span class="target-tag">คนวัยทำงาน</span>
+            <span class="target-tag">ครัวเรือนรายได้น้อย–ปานกลาง</span>
           </div>
           <div class="target-desc">กลุ่มที่ได้รับผลกระทบจากค่าครองชีพสูงมากที่สุด และสามารถนำหลักพอเพียงไปปรับใช้ได้ทันที</div>
         </div>
@@ -208,30 +233,26 @@
 
     <div class="impact-grid reveal" style="transition-delay: 0.2s">
       <div class="impact-card">
-        <!-- <div class="impact-icon">⛽</div> -->
         <div class="impact-num">+50%</div>
         <div class="impact-label">ราคาน้ำมันที่เพิ่มขึ้น</div>
       </div>
       <div class="impact-card">
-        <!-- <div class="impact-icon">🏙️</div> -->
         <div class="impact-num">10M+</div>
         <div class="impact-label">ประชาชนที่ได้รับผลกระทบ</div>
       </div>
       <div class="impact-card">
-        <!-- <div class="impact-icon">💸</div> -->
         <div class="impact-num">66%</div>
         <div class="impact-label">หนี้สาธารณะต่อ GDP</div>
       </div>
       <div class="impact-card">
-        <!-- <div class="impact-icon">🏛️</div> -->
         <div class="impact-num">20,000 ล้าน</div>
         <div class="impact-label">งบฯ โครงการไทยช่วยไทยพลัส</div>
       </div>
     </div>
 
     <p class="section-body reveal" style="margin-top: 2rem; transition-delay: 0.3s">
-      แม้รัฐบาลจะออกโครงการ <strong style="color: var(--amber)">"ไทยช่วยไทยพลัส"</strong> ช่วยเหลือประชาชนกว่า 10 ล้านคน แต่ด้วยภาระหนี้สาธารณะที่สูง การพึ่งพามาตรการภาครัฐเพียงอย่างเดียวจึงไม่ยั่งยืน <br><br>
-      <strong>คำตอบที่แท้จริงอยู่ที่ปัจเจก — และหลักปรัชญาเศรษฐกิจพอเพียง</strong>
+      แม้รัฐบาลจะออกโครงการ <strong style="color: var(--amber)">"ไทยช่วยไทยพลัส"</strong> ช่วยเหลือประชาชนกว่า 10 ล้านคน แต่ด้วยภาระหนี้สาธารณะที่สูง การพึ่งพามาตรการภาครัฐเพียงอย่างเดียวจึงไม่ยั่งยืน<br><br>
+      <strong>การพึ่งพามาตรการรัฐเพียงอย่างเดียวจึงไม่เพียงพอ — หลักปรัชญาเศรษฐกิจพอเพียงจึงกลายเป็นเครื่องมือที่จำเป็น</strong>
     </p>
   </div>
 </section>
@@ -287,36 +308,58 @@
 
 <div class="chapter-divider"></div>
 
-<!-- HEALTH -->
-<section id="health" style="background: var(--deep-green);">
+<!-- HEALTH SECTION — drop-in replacement -->
+<section id="health" style="background: var(--deep-green, #1a3d28);">
   <div class="section">
     <span class="section-label reveal">บทที่ 3 — สุขภาพและกลุ่มเป้าหมาย</span>
     <h2 class="section-title reveal">อาหารและสุขภาพ<br>ในยุคต้นทุนสูง</h2>
     <p class="section-body reveal">
-      ราคาพลังงานที่เพิ่มขึ้นส่งผลให้ต้นทุนอาหารสูงขึ้นตาม คนเมืองต้องแบกรับค่าใช้จ่ายด้านอาหารที่สูงขึ้น และอาจส่งผลต่อคุณภาพการบริโภคโดยตรง การประยุกต์ใช้หลักปรัชญาเศรษฐกิจพอเพียงในด้านนี้จึงสำคัญไม่แพ้ด้านการเงิน
+      ราคาพลังงานที่แพงขึ้นดึงต้นทุนอาหารขึ้นตามไปด้วย สุดท้ายมันตกมาที่จานข้าวของเราทุกมื้อ หลักพอเพียงเลยไม่ได้จำเป็นแค่เรื่องเงิน แต่รวมถึงสิ่งที่กินทุกวันด้วย
     </p>
-
-    <div class="health-grid reveal">
-      <div class="health-card">
-        <!-- <div class="health-icon">🥗</div> -->
-        <div class="health-card-title">วางแผนมื้ออาหาร</div>
-        <div class="health-card-body">เลือกอาหารที่มีประโยชน์ในงบที่จำกัด วางแผนเมนูล่วงหน้า ลดการพึ่งพาอาหารสำเร็จรูปที่แพงและโภชนาการต่ำ</div>
+ 
+    <div class="health-grid-v2 reveal">
+ 
+      <!-- FEATURED card — full width top -->
+      <div class="hcard hcard--featured">
+        <div class="hcard-inner">
+          <div class="hcard-label">หลักสำคัญ</div>
+          <div class="hcard-title">วางแผนมื้ออาหาร</div>
+          <div class="hcard-body">เลือกอาหารที่มีประโยชน์ในงบที่จำกัด วางแผนเมนูล่วงหน้า ลดการพึ่งพาอาหารสำเร็จรูปที่แพงและโภชนาการต่ำ</div>
+          <div class="hcard-stat">
+            <span class="hstat-num">–40%</span>
+            <span class="hstat-desc">ค่าอาหารต่อเดือนเมื่อวางแผนล่วงหน้า</span>
+          </div>
+        </div>
+        <div class="hcard-deco" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="56" stroke="rgba(200,150,42,0.15)" stroke-width="1"/>
+            <circle cx="60" cy="60" r="38" stroke="rgba(200,150,42,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
+            <circle cx="60" cy="60" r="20" fill="rgba(200,150,42,0.06)"/>
+            <line x1="60" y1="4" x2="60" y2="116" stroke="rgba(200,150,42,0.08)" stroke-width="1"/>
+            <line x1="4" y1="60" x2="116" y2="60" stroke="rgba(200,150,42,0.08)" stroke-width="1"/>
+          </svg>
+        </div>
       </div>
-      <div class="health-card">
-        <!-- <div class="health-icon">🍳</div> -->
-        <div class="health-card-title">ทำอาหารเองบางมื้อ</div>
-        <div class="health-card-body">ลดการสั่ง Delivery และหันมาทำอาหารเองแม้เพียงบางมื้อ ช่วยลดรายจ่ายและควบคุมคุณภาพโภชนาการได้ดีกว่า</div>
+ 
+      <!-- 3 smaller cards -->
+      <div class="hcard hcard--sm">
+        <div class="hcard-num">01</div>
+        <div class="hcard-title">ทำอาหารเองบางมื้อ</div>
+        <div class="hcard-body">ลดสั่ง Delivery แค่ 3 วัน/สัปดาห์ก็ช่วยได้แล้ว</div>
       </div>
-      <div class="health-card">
-        <!-- <div class="health-icon">🌱</div> -->
-        <div class="health-card-title">ปลูกผักในพื้นที่จำกัด</div>
-        <div class="health-card-body">แม้อยู่คอนโดหรืออพาร์ตเมนต์ก็ปลูกผักสวนครัวในกระถางได้ เช่น ต้นหอม ผักชี พริก ช่วยลดค่าวัตถุดิบได้จริง</div>
+ 
+      <div class="hcard hcard--sm">
+        <div class="hcard-num">02</div>
+        <div class="hcard-title">ปลูกผักในพื้นที่จำกัด</div>
+        <div class="hcard-body">คอนโดก็ปลูกได้ — ต้นหอม ผักชี พริก ในกระถางเล็กๆ</div>
       </div>
-      <div class="health-card">
-        <!-- <div class="health-icon">💊</div> -->
-        <div class="health-card-title">ป้องกันดีกว่ารักษา</div>
-        <div class="health-card-body">ค่ารักษาพยาบาลเป็นรายจ่ายฉุกเฉินที่ใหญ่มาก การดูแลสุขภาพเชิงป้องกันด้วยอาหารที่ดีและการออกกำลังกาย คือการลงทุนระยะยาว</div>
+ 
+      <div class="hcard hcard--sm hcard--accent">
+        <div class="hcard-num">03</div>
+        <div class="hcard-title">ป้องกันดีกว่ารักษา</div>
+        <div class="hcard-body">ค่ารักษาแพง กินดีออกกำลังกายคือลงทุนที่คุ้มที่สุด</div>
       </div>
+ 
     </div>
   </div>
 </section>
@@ -335,11 +378,11 @@
         <div class="step-line"></div>
         <div class="step-dot">1</div>
         <div class="step-content reveal">
-          <div class="step-title">🔍 เช็กสุขภาพการเงินตัวเอง</div>
+          <div class="step-title">เช็กสุขภาพการเงินตัวเอง</div>
           <div class="step-body">ก่อนแก้อะไร ต้องรู้ก่อนว่าตัวเองอยู่ตรงไหน จดบันทึกรายรับ-รายจ่ายทุกบาทในแต่ละเดือน แล้วแบ่งเป็น "จำเป็น" กับ "ไม่จำเป็น" เพื่อให้เห็นว่าเงินหายไปไหน</div>
           <div class="tip-box">
-            💡 <strong>ตัวอย่าง:</strong> คนเงินเดือน 20,000 บาทที่รู้สึกว่าไม่พอ อาจพบว่าใช้กับ Delivery และร้านสะดวกซื้อไปถึง <strong>6,000–8,000 บาท/เดือน</strong> โดยไม่รู้ตัว<br><br>
-            🛠️ <strong>เครื่องมือ:</strong> แอป MeowJot หรือสมุดจดรายรับ-รายจ่าย
+            <span class="tip-label">ตัวอย่าง</span> คนเงินเดือน 20,000 บาทที่รู้สึกว่าไม่พอ อาจพบว่าใช้กับ Delivery และร้านสะดวกซื้อไปถึง <strong>6,000–8,000 บาท/เดือน</strong> โดยไม่รู้ตัว<br><br>
+            <span class="tip-label note">เครื่องมือ</span> แอป MeowJot หรือสมุดจดรายรับ-รายจ่าย
           </div>
         </div>
       </div>
@@ -348,12 +391,12 @@
         <div class="step-line"></div>
         <div class="step-dot">2</div>
         <div class="step-content reveal">
-          <div class="step-title">✂️ ตัดรายจ่ายที่ไม่จำเป็น</div>
-          <div class="step-body">เมื่อเห็นภาพรายจ่ายแล้ว ระบุสิ่งที่สามารถลดหรือตัดได้ทันที เช่น Subscription ที่ไม่ได้ใช้ การสั่ง Delivery ทุกวัน หรือกาแฟแก้วละ 150 บาทวันละแก้ว</div>
+          <div class="step-title">ตัดรายจ่ายที่ไม่จำเป็น</div>
+          <div class="step-body">เมื่อเห็นภาพรายจ่ายแล้ว ระบุสิ่งที่สามารถลดหรือตัดได้ทันที เช่น Subscription ที่ไม่ได้ใช้ การสั่ง Delivery ทุกวัน หรือกาแฟแก้วละ 80 บาทวันละแก้ว</div>
           <div class="tip-box">
-            💡 <strong>ประหยัดได้:</strong> ลดกาแฟนอก 1 แก้ว/วัน (80 บาท) = <strong>2,400 บาท/เดือน</strong><br>
+            <span class="tip-label">ประหยัดได้</span> ลดกาแฟนอก 1 แก้ว/วัน (80 บาท) = <strong>2,400 บาท/เดือน</strong><br>
             ยกเลิก Streaming 2 แพลตฟอร์ม = <strong>400–600 บาท/เดือน</strong><br><br>
-            🛠️ <strong>เครื่องมือ:</strong> งบประมาณแบบ <strong>50/30/20</strong> (จำเป็น 50% / อยากได้ 30% / ออม 20%)
+            <span class="tip-label note">เครื่องมือ</span> งบประมาณแบบ <strong>50/30/20</strong> (จำเป็น 50% / อยากได้ 30% / ออม 20%)
           </div>
 
           <!-- 50/30/20 Interactive Chart -->
@@ -367,17 +410,14 @@
             <div class="donut-wrapper">
               <svg id="donutSvg" viewBox="0 0 220 220" width="220" height="220">
                 <circle class="donut-bg" cx="110" cy="110" r="80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="36"/>
-                <!-- necessary 50% -->
                 <circle id="arc-necessary" class="donut-arc" cx="110" cy="110" r="80" fill="none"
                   stroke="#E8B44A" stroke-width="36"
                   stroke-dasharray="0 502.65" stroke-dashoffset="502.65"
                   transform="rotate(-90 110 110)" style="transition: stroke-dasharray 0.7s ease, stroke-dashoffset 0.7s ease;"/>
-                <!-- want 30% -->
                 <circle id="arc-want" class="donut-arc" cx="110" cy="110" r="80" fill="none"
                   stroke="#7A9E7E" stroke-width="36"
                   stroke-dasharray="0 502.65" stroke-dashoffset="502.65"
                   transform="rotate(-90 110 110)" style="transition: stroke-dasharray 0.7s ease, stroke-dashoffset 0.7s ease;"/>
-                <!-- save 20% -->
                 <circle id="arc-save" class="donut-arc" cx="110" cy="110" r="80" fill="none"
                   stroke="#4A9E7A" stroke-width="36"
                   stroke-dasharray="0 502.65" stroke-dashoffset="502.65"
@@ -419,7 +459,7 @@
         <div class="step-line"></div>
         <div class="step-dot">3</div>
         <div class="step-content reveal">
-          <div class="step-title">🍳 วางแผนอาหารล่วงหน้า</div>
+          <div class="step-title">วางแผนอาหารล่วงหน้า</div>
           <div class="step-body">อาหารคือรายจ่ายที่ใหญ่ที่สุดและควบคุมได้มากที่สุด วางแผนเมนู 1 สัปดาห์ล่วงหน้า ซื้อวัตถุดิบในคราวเดียว ลดทั้งค่าใช้จ่ายและการตัดสินใจสั่ง Delivery</div>
           <table class="compare-table">
             <thead>
@@ -436,7 +476,7 @@
             </tbody>
           </table>
           <div class="save-highlight">
-            📊 สั่ง Delivery วันละ 2 มื้อ = <strong>6,000 บาท/เดือน</strong><br>
+            สั่ง Delivery วันละ 2 มื้อ = <strong>6,000 บาท/เดือน</strong><br>
             ทำเองวันละ 2 มื้อ = <strong>1,800 บาท/เดือน</strong><br>
             <strong style="color: var(--amber); font-size: 1.1rem">ประหยัดได้ 4,200 บาท/เดือน</strong>
           </div>
@@ -447,10 +487,10 @@
         <div class="step-line"></div>
         <div class="step-dot">4</div>
         <div class="step-content reveal">
-          <div class="step-title">🏦 สร้างเงินสำรองฉุกเฉิน</div>
+          <div class="step-title">สร้างเงินสำรองฉุกเฉิน</div>
           <div class="step-body">เงินส่วนที่เหลือจากการลดรายจ่าย ควรถูกแยกไปเป็นเงินสำรองฉุกเฉินก่อนเสมอ ตั้งเป้า 3 เดือนของค่าใช้จ่ายพื้นฐาน รองรับเหตุไม่คาดคิด เช่น ตกงาน เจ็บป่วย หรือของแพงพุ่งขึ้นกะทันหัน</div>
           <div class="ef-calc" id="efCalc">
-            <p class="ef-title">🧮 คำนวณเงินสำรองฉุกเฉินของคุณ</p>
+            <p class="ef-title">คำนวณเงินสำรองฉุกเฉินของคุณ</p>
 
             <div class="ef-inputs">
               <div class="ef-field">
@@ -502,11 +542,11 @@
       <div class="step">
         <div class="step-dot">5</div>
         <div class="step-content reveal">
-          <div class="step-title">📰 ติดตามข่าวสารอย่างมีวิจารณญาณ</div>
+          <div class="step-title">ติดตามข่าวสารอย่างมีวิจารณญาณ</div>
           <div class="step-body">ในยามวิกฤติ ข้อมูลผิดและการกักตุนเกินจำเป็นคือตัวการที่ทำให้ปัญหารุนแรงขึ้น ตรวจสอบข้อมูลก่อนเชื่อ ตัดสินใจบนฐานความจริง ไม่ใช่ความกลัว</div>
           <div class="tip-box">
-            ⚠️ <strong>บทเรียน 2026:</strong> เมื่อข่าวสงครามอิหร่านแพร่สะพัด เกิดการแห่ซื้อน้ำมันจนขาดตลาด ทั้งที่ไทยยังมีสำรองเพียงพอ การกักตุนจึงสร้างปัญหาเองโดยไม่จำเป็น<br><br>
-            🛠️ แหล่งข้อมูลที่เชื่อถือได้: กรมพลังงาน, ธนาคารแห่งประเทศไทย, สำนักงานสถิติแห่งชาติ
+            <span class="tip-label warn">บทเรียน 2026</span> เมื่อข่าวสงครามอิหร่านแพร่สะพัด เกิดการแห่ซื้อน้ำมันจนขาดตลาด ทั้งที่ไทยยังมีสำรองเพียงพอ การกักตุนจึงสร้างปัญหาเองโดยไม่จำเป็น<br><br>
+            <span class="tip-label note">แหล่งข้อมูล</span> กรมพลังงาน, ธนาคารแห่งประเทศไทย, สำนักงานสถิติแห่งชาติ
           </div>
         </div>
       </div>
@@ -516,7 +556,6 @@
 </section>
 
 <div class="chapter-divider"></div>
-
 
 <div class="chapter-divider"></div>
 
@@ -568,7 +607,7 @@
             <td style="color: #7fcf8e; font-weight: 600;">400 บาท</td>
           </tr>
           <tr style="background: rgba(200,150,42,0.08); border-top: 1px solid rgba(200,150,42,0.3);">
-            <td style="color: var(--amber); font-weight: 700;">💰 เงินออม</td>
+            <td style="color: var(--amber); font-weight: 700;">เงินออม</td>
             <td style="color: rgba(245,237,214,0.5);">500 บาท</td>
             <td style="color: var(--amber); font-weight: 700; font-size: 1.1rem;">3,000 บาท</td>
             <td style="color: var(--amber); font-weight: 700;">+2,500 บาท</td>
@@ -589,7 +628,7 @@
     </div>
 
     <div class="tip-box reveal" style="margin-top: 1.5rem; border-color: rgba(200,150,42,0.3);">
-      💡 <strong>บทเรียนสำคัญ:</strong>  เศรษฐกิจพอเพียงไม่ได้แปลว่าต้องประหยัดจนลำบาก แต่คือการ <strong>รู้ว่าอะไรจำเป็น อะไรลดได้</strong> และเตรียมตัวให้พร้อมเมื่อสถานการณ์ไม่แน่นอน
+      <span class="tip-label">บทเรียนสำคัญ</span> เศรษฐกิจพอเพียงไม่ได้แปลว่าต้องประหยัดจนลำบาก แต่คือการ <strong>รู้ว่าอะไรจำเป็น อะไรลดได้</strong> และเตรียมตัวให้พร้อมเมื่อสถานการณ์ไม่แน่นอน
     </div>
   </div>
 </section>
